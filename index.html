@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Stablecoin V2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Iron Stablecoin V2</h1>
+        <button id="connectWallet">Connect MetaMask</button>
+        <p id="walletStatus">Not connected</p>
+
+        <div class="info">
+            <p>IRONv2 Balance: <span id="balance">0</span></p>
+            <p>ETH Collateral: <span id="collateral">0 ETH</span></p>
+        </div>
+
+        <div class="actions">
+            <input id="depositAmount" type="number" placeholder="Enter ETH amount">
+            <button id="depositBtn">Deposit ETH</button>
+
+            <input id="mintAmount" type="number" placeholder="Enter IRONv2 amount">
+            <button id="mintBtn">Mint IRONv2</button>
+
+            <input id="burnAmount" type="number" placeholder="Enter IRONv2 amount">
+            <button id="burnBtn">Burn IRONv2</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
