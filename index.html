@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Stablecoin V2</title>
+    <title>Iron Stablecoin dApp</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Iron Stablecoin V2</h1>
-        <button id="connectWallet">Connect MetaMask</button>
-        <p id="walletStatus">Not connected</p>
+        
+        <button id="connectWallet">Kết nối Ví</button>
+        <p><strong>Ví của bạn:</strong> <span id="walletAddress">Chưa kết nối</span></p>
 
-        <div class="info">
-            <p>IRONv2 Balance: <span id="balance">0</span></p>
-            <p>ETH Collateral: <span id="collateral">0 ETH</span></p>
-        </div>
+        <h3>Nạp thế chấp</h3>
+        <input type="number" id="depositAmount" placeholder="Số ETH">
+        <button onclick="depositCollateral()">Nạp ETH</button>
 
-        <div class="actions">
-            <input id="depositAmount" type="number" placeholder="Enter ETH amount">
-            <button id="depositBtn">Deposit ETH</button>
+        <h3>Mint Stablecoin</h3>
+        <input type="number" id="mintAmount" placeholder="Số IRON">
+        <button onclick="mintIron()">Mint</button>
 
-            <input id="mintAmount" type="number" placeholder="Enter IRONv2 amount">
-            <button id="mintBtn">Mint IRONv2</button>
+        <h3>Rút thế chấp</h3>
+        <input type="number" id="withdrawAmount" placeholder="Số ETH">
+        <button onclick="withdrawCollateral()">Rút ETH</button>
 
-            <input id="burnAmount" type="number" placeholder="Enter IRONv2 amount">
-            <button id="burnBtn">Burn IRONv2</button>
-        </div>
+        <h3>Burn Stablecoin</h3>
+        <input type="number" id="burnAmount" placeholder="Số IRON">
+        <button onclick="burnIron()">Burn</button>
     </div>
 
     <script src="app.js"></script>
