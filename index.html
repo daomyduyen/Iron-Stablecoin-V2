@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Stablecoin dApp</title>
+    <title>Iron Stablecoin V2</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .status {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Iron Stablecoin V2</h1>
-        
-        <button id="connectWallet">Kết nối Ví</button>
-        <p><strong>Ví của bạn:</strong> <span id="walletAddress">Chưa kết nối</span></p>
-
-        <h3>Nạp thế chấp</h3>
-        <input type="number" id="depositAmount" placeholder="Số ETH">
-        <button onclick="depositCollateral()">Nạp ETH</button>
-
-        <h3>Mint Stablecoin</h3>
-        <input type="number" id="mintAmount" placeholder="Số IRON">
-        <button onclick="mintIron()">Mint</button>
-
-        <h3>Rút thế chấp</h3>
-        <input type="number" id="withdrawAmount" placeholder="Số ETH">
-        <button onclick="withdrawCollateral()">Rút ETH</button>
-
-        <h3>Burn Stablecoin</h3>
-        <input type="number" id="burnAmount" placeholder="Số IRON">
-        <button onclick="burnIron()">Burn</button>
+    <h1>Iron Stablecoin V2</h1>
+    <button id="connectButton" class="button">Connect MetaMask</button>
+    <div id="walletAddress"></div>
+    <div class="status" id="status"></div>
+    <div id="actions">
+        <button class="button" id="depositButton">Deposit ETH</button>
+        <button class="button" id="mintButton">Mint IRON</button>
+        <button class="button" id="burnButton">Burn IRON</button>
     </div>
 
     <script src="app.js"></script>
